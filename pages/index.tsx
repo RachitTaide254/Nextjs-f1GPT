@@ -23,7 +23,7 @@ const openAIApiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
 // console.log(openAIApiKey,'openAIApiKey')
 
 const client = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_API_KEY
+  process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_API_KEY!
 );
 
 export default function Home() {
