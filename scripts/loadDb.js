@@ -15,15 +15,15 @@ import { StringOutputParser } from "@langchain/core/output_parsers";
 
 
 const {
-  OPENAI_API_KEY,
-  SUPABASE_URL,
-  SUPABASE_API_KEY
+  NEXT_PUBLIC_OPENAI_API_KEY,
+  NEXT_PUBLIC_SUPABASE_URL,
+  NEXT_PUBLIC_SUPABASE_API_KEY
 } = process.env;
 
 //const openai = new OpenAi({apiKey:OPENAI_API_KEY})
 const model = new ChatOpenAI({temperature: 0});
-const openAIApiKey = process.env.OPENAI_API_KEY;
-type SimilarityMetric = "dot_product" | "cosine" | "euclidean"
+const openAIApiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY
+// type SimilarityMetric = "dot_product" | "cosine" | "euclidean"
 try{
 
   const func = async()=>{
@@ -37,7 +37,7 @@ try{
   ]
   
   const docs = await Promise.all(
-    f1Data.map((url:string) => new CheerioWebBaseLoader(url).load()),
+    f1Data.map((url) => new CheerioWebBaseLoader(url).load()),
     );
     const docsList = docs.flat();
     
@@ -53,7 +53,7 @@ try{
       //   embeddings
       // );
       
-      const client = createClient(SUPABASE_URL,SUPABASE_API_KEY);
+      const client = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_API_KEY);
       //console.log(client,'kop')
       const store = new SupabaseVectorStore(
         new OpenAIEmbeddings({openAIApiKey}),

@@ -2,20 +2,23 @@
   "name": "f1gpt",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "seed": "ts-node ./scripts/loadDb.ts",
+    "seed": "node ./scripts/loadDb.js",
     "lint": "next lint"
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.0.10",
-    "@langchain/community": "^0.3.19",
-    "@langchain/core": "^0.3.26",
-    "@supabase/supabase-js": "^2.47.10",
+    "@langchain/community": "^0.3.49",
+    "@langchain/core": "^0.3.66",
+    "@langchain/groq": "^0.2.3",
+    "@langchain/openai": "^0.6.3",
+    "@supabase/supabase-js": "^2.53.0",
     "ai": "^4.0.21",
-    "cheerio": "^1.0.0",
+    "cheerio": "^1.1.2",
     "dotenv": "^16.4.7",
     "langchain": "^0.3.7",
     "next": "15.1.2",
@@ -32,6 +35,7 @@
     "eslint-config-next": "15.1.2",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
