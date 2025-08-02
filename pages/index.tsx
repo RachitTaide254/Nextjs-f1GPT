@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
-import React, { useState, useEffect } from "react";
-import { OpenAIEmbeddings, ChatOpenAI } from "@langchain/openai";
+import React, { useState, } from "react";
+import { OpenAIEmbeddings, } from "@langchain/openai";
 import { createClient } from "@supabase/supabase-js";
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
