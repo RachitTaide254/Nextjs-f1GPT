@@ -28,7 +28,7 @@ const client = createClient(
 
 export default function Home() {
   const [input, setInput] = useState("");
-  const [data, setData] = useState("");
+  const [data, setData] = useState<string|undefined>("");
   const handleClick = async () => {
     const resp = await callAi(input);
     setData(resp);
